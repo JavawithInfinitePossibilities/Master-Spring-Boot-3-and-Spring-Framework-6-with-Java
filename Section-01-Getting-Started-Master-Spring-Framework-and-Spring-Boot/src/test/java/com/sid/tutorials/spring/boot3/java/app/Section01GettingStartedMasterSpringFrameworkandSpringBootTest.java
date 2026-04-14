@@ -42,4 +42,25 @@ class Section01GettingStartedMasterSpringFrameworkandSpringBootTest {
             throw new RuntimeException(e);
         }
     }
+
+
+    @Test
+    void getUnique() {
+        int[] arra1 = {-1, 4, 5, 7, -2, -6};
+        int[] arra2 = {7, 8, -2, 4, -6, -1, 5};
+        int unique = 0;
+        for (int i = 0; i < arra1.length; i++) {
+            System.out.println(Integer.toBinaryString(unique));
+            System.out.println(Integer.toBinaryString(arra1[i]));
+            System.out.println(Integer.toBinaryString(arra2[i]));
+            unique ^= arra1[i];
+            System.out.println(Integer.toBinaryString(unique));
+            unique ^= arra2[i];
+            System.out.println(Integer.toBinaryString(unique));
+        }
+        if (arra2.length > arra1.length) {
+            unique ^= arra2[arra1.length];
+        }
+        System.out.println("Unique value : " + unique);
+    }
 }
